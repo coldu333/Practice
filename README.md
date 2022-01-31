@@ -1,2 +1,2 @@
 # Practice_C
-To Practice C Code
+C언어 기초부터 탄탄하게 / To Practice C Code
