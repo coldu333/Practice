@@ -12,6 +12,14 @@ typedef enum syllable
     Ti = 7
 } Syllable;
 
+enum color
+{
+    RED = 3,
+    BLUE, // 4 숫자를 기입하지 않으면 앞에 숫자 + 1이 된다. 
+    WHITE = 6,
+    BLACK // 7
+};
+
 void Sound(Syllable sy)
 {
     switch(sy)
