@@ -29,24 +29,23 @@ int AddList(Phone*PhoneList, int size)
 
 int DelList(Phone*PhoneList, int size)
 {
-    char tempName[32];
+    char tempName[32] = {"\0"};
 
     printf("\n[삭제]\n");
     printf("삭제할 이름 : "); scanf("%s", tempName);
     
     for(int i=0; i<=size+1; i++)
     {   
-        if(PhoneList[i].name == tempName)
+        if(strcmp(tempName, PhoneList[i].name)==0)
         {
             PhoneList[i] = PhoneList[size];
-                
             size--;
             PhoneList = (Phone*)realloc(PhoneList, sizeof(Phone)*(1+size));
             printf("성공적으로 삭제했습니다.\n");
             return size;
         }
     }
-
+    
     printf("이름을 찾을 수 없습니다.\n");
     return size;
 }
@@ -60,7 +59,7 @@ void SearchList(Phone*PhoneList, int size)
             
     for(int i=0; i<=size+1; i++)
     {   
-        if(PhoneList[i].name == tempName)
+        if(strcmp(tempName, PhoneList[i].name)==0)
         {
             printf("Name: %s    Tel: %s\n", PhoneList[i].name, PhoneList[i].phoneNum);
             return;
