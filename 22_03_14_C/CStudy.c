@@ -27,7 +27,7 @@ void AddList()
     fclose(fp);
 }
 
-void DelList(Phone*PhoneList, int size)
+void DelList()
 {
     fp = fopen("PhoneBook.txt", "rt");
     FILE * temp = fopen("temp.txt", "wt");
@@ -115,9 +115,7 @@ void PrintList()
 
 int main()
 {
-    Phone *PhoneList = (Phone*)malloc(sizeof(Phone));
     int Sel = 0;
-    int size = -1;
 
     while(1)
     {
@@ -132,7 +130,7 @@ int main()
         }
         else if(Sel == 2)
         {
-            DelList(PhoneList, size);
+            DelList();
         }
         else if(Sel == 3)
         {    
@@ -144,12 +142,10 @@ int main()
         }
         else if(Sel == 5)
         {
-            free(PhoneList);
             return 0;
         }
         else
             printf("잘못된 입력입니다. 다시 입력해주세요");
     }
 
-    free(PhoneList);
 }
