@@ -1,4 +1,4 @@
-//인라인 함수
+//템플릿
 #include <iostream>
 
 template <typename T>
